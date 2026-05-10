@@ -7,7 +7,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get description:text" do
-    get posts_description: text_url
+    get posts_description:text_url
     assert_response :success
   end
 end
