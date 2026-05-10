@@ -1,7 +1,24 @@
-</h1>Posts</h1>
+<h3>Posts</h3>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= post.title %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%= link_to "Ver", post %></td>
+        <td><%= link_to "Editar", edit_post_path(post) %></td>
+        <td><%= button_to "Deletar", post, method: :delete, data: { confirm: "Certeza?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Crie um Post", new_post_path %>

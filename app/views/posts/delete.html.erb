@@ -1,0 +1,4 @@
+<h3>Deletar</h3>
+<p> certeza que quer deletar? <%= @post.title %>?</p>
+<%= button_to "Delete", post_path(@post), method: :delete, data: { confirm: "Certeza?" } %>
+<%= link_to "Cancelar", posts_path %>
